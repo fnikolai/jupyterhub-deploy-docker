@@ -53,11 +53,11 @@ c.JupyterHub.db_url = "sqlite:////data/jupyterhub.sqlite"
 #c.NativeAuthenticator.open_signup = True
 
 # Authenticate all users regardless of password
-c.JupyterHub.authenticator_class = "dummy"
+#c.JupyterHub.authenticator_class = "dummy"
 
 # -------------------------------------------
 # Authenticate users with JTW Authenticator
-#c.JupyterHub.authenticator_class = "jwtauthenticator.JSONWebTokenLocalAuthenticator"
+c.JupyterHub.authenticator_class = "jwtauthenticator.JSONWebTokenLocalAuthenticator"
 
 # Only one of two following fields must be set.  
 # If both, then "secret" will be the signing method used.
@@ -76,7 +76,8 @@ c.JSONWebTokenAuthenticator.username_claim_field = 'username'
 c.JSONWebTokenAuthenticator.expected_audience = ''
 
 # This will enable local user creation upon authentication, requires JSONWebTokenLocalAuthenticator
-c.JSONWebLocalTokenAuthenticator.create_system_users = True
+#c.JSONWebLocalTokenAuthenticator.create_system_users = True
+c.LocalAuthenticator.create_system_users = True
 
 # Only the one of three follwing sources for JWT token must be set at the time. If you want to disable inspection
 # of some of sources, set corresponding value to '' 
