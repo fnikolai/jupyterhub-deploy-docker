@@ -50,12 +50,14 @@ c.JupyterHub.db_url = "sqlite:////data/jupyterhub.sqlite"
 #c.JupyterHub.authenticator_class = "nativeauthenticator.NativeAuthenticator"
 
 # Allow anyone to sign-up without approval
-c.NativeAuthenticator.open_signup = True
+#c.NativeAuthenticator.open_signup = True
 
+# Authenticate all users regardless of password
+c.JupyterHub.authenticator_class = "dummy"
 
 # -------------------------------------------
 # Authenticate users with JTW Authenticator
-c.JupyterHub.authenticator_class = "jwtauthenticator.JSONWebTokenLocalAuthenticator"
+#c.JupyterHub.authenticator_class = "jwtauthenticator.JSONWebTokenLocalAuthenticator"
 
 # Only one of two following fields must be set.  
 # If both, then "secret" will be the signing method used.
